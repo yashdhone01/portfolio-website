@@ -5,13 +5,20 @@ import { projects } from "../data/projects.js";
 import ProjectCard from "../components/ProjectCard.astro";
 import ExperienceSection from "../components/ExperienceSection.astro";
 import Testimonials from "../components/Testimonials.astro";
+import SEO from "../components/SEO.astro"; 
 ---
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yash Dhone — Portfolio</title>
+    <SEO 
+      title="Yash Dhone | AI & Cybersecurity Engineer"
+      description="Portfolio of Yash Dhone - Game Developer, AI Engineer, and Cybersecurity Analyst specializing in immersive web experiences and data-driven systems."
+      image="/pfp.jpg"
+    />
+
+    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
+    <meta name="google-site-verification" content="bxh7SWzpOSkSDDQFpImWfSxTG2a5_lNUJu1lVSBq_6o" />
+    
     <style>
       /* --- FIX 1: HERO FULL SCREEN --- */
       .hero {
@@ -301,12 +308,12 @@ import Testimonials from "../components/Testimonials.astro";
       <!-- ========================== -->
       <section id="about" class="about-section reveal">
         <h2 class="about-title">
-          A little bit <span class="gradient">About Me</span>
+          A little bit <span class="gradient-text">About Me</span>
         </h2>
         <div class="about-grid">
           <div class="about-card">
             <h3>Innovating with AI, Cybersecurity & Data</h3>
-            <img src="/about.png" alt="AI Portrait" class="about-img" />
+            <img src="/pfp.jpg" alt="AI Portrait" class="about-img" />
           </div>
           <div class="about-card">
             <h3>I find innovative solutions through tech.</h3>
@@ -395,6 +402,10 @@ def analyze_threat(packet):
           </div>
         </div>
       </section>
+
+      <footer class="footer">
+        © 2025 Yash Dhone — All rights reserved.
+      </footer>
 
     </main>
 
