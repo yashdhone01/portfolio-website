@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.google.com/search?q=https://yashdhone.vercel.app/sitemap-index.xml
-```
 
-Install the Sitemap Plugin
-Open your terminal (Command Prompt or VS Code terminal) in your project folder and run:
-
-npx astro add sitemap
+Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://yashdhone.vercel.app/sitemap-index.xml
