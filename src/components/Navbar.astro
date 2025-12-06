@@ -1,0 +1,77 @@
+---
+---
+<nav class="navbar">
+  <div class="logo">YD</div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);   /* Translucent dark bg */
+    backdrop-filter: blur(16px);       /* Blur effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    z-index: 999;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff; /* Ensure logo is white */
+    cursor: pointer;
+  }
+
+  ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: 0.3s;
+    font-weight: 500;
+  }
+
+  a:hover {
+    opacity: 1;
+    color: #00eaff; /* Added your cyan accent for hover state */
+  }
+
+  /* Responsive Mobile View */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 16px 20px;
+    }
+    
+    .logo {
+      font-size: 1.4rem;
+    }
+
+    a {
+      font-size: 0.9rem; /* Slightly smaller to fit more items */
+    }
+    
+    ul {
+      gap: 12px; /* Reduced gap for mobile */
+    }
+  }
+</style>

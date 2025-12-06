@@ -1,0 +1,187 @@
+---
+const { title, description, link, tags = [], color = "#ffffff", class: className = "", image } = Astro.props;
+
+// Determine Aspect Ratio based on card type
+const isWide = className.includes("wide-card");
+const aspectRatioClass = isWide ? "ratio-16-9" : "ratio-4-3";
+---
+
+<a href={link} class={`project-card ${className}`}>
+  <div class="card-inner">
+    
+    <!-- Top Glow Line -->
+    <div class="glow-line" style={`background: ${color};`}></div>
+
+    <div class="content">
+      <!-- Title -->
+      <h3 class="card-title">
+        {title}
+        <span class="arrow">→</span>
+      </h3>
+
+      <!-- Tags -->
+      <div class="tags">
+        {tags.map((tag: unknown) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+
+      <!-- Description -->
+      <p class="description">{description}</p>
+
+      <!-- Project Image -->
+      {image && (
+        <div class={`image-container ${aspectRatioClass}`}>
+          <img src={image} alt={title} class="project-image" loading="lazy" />
+        </div>
+      )}
+    </div>
+
+    <!-- Background Hover Effect -->
+    <div class="hover-bg" style={`background: radial-gradient(circle at top right, ${color}20, transparent 60%);`}></div>
+  </div>
+</a>
+
+<style>
+  .project-card {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    border-radius: 20px;
+    background: #0f1621; 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-inner {
+    position: relative;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    flex-grow: 1;
+  }
+
+  /* --- GLOW LINE TOP --- */
+  .glow-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    box-shadow: 0 0 15px currentColor;
+  }
+
+  /* --- TEXT STYLES --- */
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arrow {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: inherit;
+  }
+
+  .description {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-top: auto; 
+    margin-bottom: 20px;
+  }
+
+  /* --- IMAGE STYLES & RATIOS --- */
+  .image-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  /* 16:9 Aspect Ratio for Wide Cards */
+  .ratio-16-9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* 4:3 Aspect Ratio for Standard Cards */
+  .ratio-4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .project-card:hover .project-image {
+    transform: scale(1.08);
+  }
+
+  /* --- TAGS --- */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+  }
+
+  /* --- HOVER EFFECTS --- */
+  .project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .project-card:hover .glow-line {
+    transform: scaleX(1);
+  }
+
+  .project-card:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--hover-color);
+  }
+
+  .hover-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .project-card:hover .hover-bg {
+    opacity: 1;
+  }
+</style>

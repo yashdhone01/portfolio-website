@@ -1,0 +1,8 @@
+Model Information:
+* title:	Cute Robot Companion (GLB)
+* source:	https://sketchfab.com/3d-models/cute-robot-companion-glb-0f64197efce74fba8145b941efea323a
+* author:	3D Next Level Gen (https://sketchfab.com/3dnextlevelgen)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
