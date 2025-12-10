@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.google.com/url?sa=E&source=gmail&q=https://yashdhone.vercel.app/sitemap-index.xml
+Sitemap:https://yashdhone.vercel.app/sitemap-index.xml
